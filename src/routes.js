@@ -7,8 +7,8 @@ import UserEdit from './components/user/UserEdit.vue'
 export const routes = [
   { path: '/', component: Home },
   { path: '/user', component: User, children: [
-    { path: '', component: UserStart},
-    { path: ':id', component: UserDetail},
-    { path: ':id/edit', component: UserEdit}
+    { path: '', component: UserStart },
+    { path: ':id', component: UserDetail },
+    { path: ':id/edit', component: UserEdit }
   ] }
 ]
