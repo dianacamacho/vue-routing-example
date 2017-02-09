@@ -6,7 +6,9 @@ import { routes } from './routes';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes: routes
+  routes: routes,
+  // when server is configured to not use # style of routing use history mode and always return the index.html file
+  mode: 'history',
 });
 
 new Vue({
