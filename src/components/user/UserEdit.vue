@@ -22,6 +22,17 @@
         this.confirmed = true;
         console.log(this.confirmed);
       }
+    },
+    beforeRouteLeave(to, from, next) {
+      if (this.confirmed) {
+        next();
+      } else {
+        if (confirm('Are you sure?')) {
+          next();
+        } else {
+          next(false);
+        }
+      }
     }
   }
 </script>
