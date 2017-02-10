@@ -10,12 +10,15 @@ const router = new VueRouter({
   // when server is configured to not use # style of routing use history mode and always return the index.html file
   mode: 'history',
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
+    if(savedPosition) {
       return savedPosition;
-    } else {
+    }
+
+    if(to.hash) {
       return { selector: to.hash };
     }
   }
+
 });
 
 new Vue({
