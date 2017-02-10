@@ -9,6 +9,13 @@ const router = new VueRouter({
   routes: routes,
   // when server is configured to not use # style of routing use history mode and always return the index.html file
   mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { selector: to.hash };
+    }
+  }
 });
 
 new Vue({
