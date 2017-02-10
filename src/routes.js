@@ -1,7 +1,7 @@
 import Home from './components/Home.vue'
 import Header from './components/Header.vue'
 
-// webpack will only load these files when needed, instead of loading all into bundle in the beginning
+// webpack will only load these files when needed, instead of loading all into bundle in the beginning, more efficient
 const User = resolve => {
   require.ensure(['./components/user/User.vue'], () => {
     resolve(require('./components/user/User.vue'));
